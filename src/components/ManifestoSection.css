@@ -1,0 +1,428 @@
+/* MANIFESTO / FETISH BANNER SECTION */
+.manifesto-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #030303;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   BACKGROUND MULTI-DIRECTIONAL TYPOGRAPHY MATRIX
+   ========================================================================== */
+.bg-typography-matrix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Horizontal marquee rows */
+.bg-marquee-row {
+  position: absolute;
+  width: 200%;
+  white-space: nowrap;
+  font-family: 'Anton', 'Space Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: 4px;
+}
+
+.bg-marquee-row.top-row {
+  top: 4%;
+  left: -20%;
+}
+
+.bg-marquee-row.bottom-row {
+  bottom: 4%;
+  left: -10%;
+  color: rgba(230, 20, 20, 0.15);
+}
+
+.marquee-track {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Vertical Streamers Grid */
+.vertical-streamers-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.85;
+}
+
+.streamer-col {
+  display: flex;
+  flex-direction: column;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  will-change: transform;
+  user-select: none;
+}
+
+.v-word {
+  font-family: 'Anton', 'Oswald', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.05);
+  margin: 20px 0;
+  transition: color 0.3s ease;
+}
+
+.v-word.v-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+}
+
+.center-blur-col {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(180deg);
+}
+
+.v-word.v-big-red {
+  color: rgba(220, 20, 20, 0.18);
+  font-family: 'Anton', 'Syne', sans-serif;
+  font-size: clamp(6rem, 14vw, 13rem);
+  filter: blur(1.5px);
+  -webkit-text-stroke: 1px rgba(255, 30, 30, 0.1);
+}
+
+/* Scattered / Diagonal Tags */
+.scatter-tag {
+  position: absolute;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scatter-tag .tag-bracket {
+  color: #e61414;
+  font-weight: bold;
+}
+
+.tag-pos-1 {
+  top: 14%;
+  left: 6%;
+}
+
+.tag-pos-2 {
+  top: 25%;
+  right: 8%;
+  writing-mode: vertical-lr;
+}
+
+.tag-pos-3 {
+  bottom: 18%;
+  left: 8%;
+}
+
+.tag-pos-4 {
+  bottom: 22%;
+  right: 12%;
+  border-color: rgba(230, 20, 20, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tag-icon {
+  color: #e61414;
+}
+
+/* ==========================================================================
+   FOREGROUND POSTER CONTAINER (Centerpiece editorial poster)
+   ========================================================================== */
+.manifesto-poster-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(8, 8, 8, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95);
+  padding: clamp(35px, 6vw, 70px);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Meta Bar Top */
+.poster-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+}
+
+.meta-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.meta-accent-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #e61414;
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #e61414 !important;
+  animation: pulse-dot 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.meta-title-small {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.meta-sub {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  color: #e61414;
+  letter-spacing: 1.5px;
+  padding: 2px 6px;
+  background: rgba(230, 20, 20, 0.12);
+  border: 1px solid rgba(230, 20, 20, 0.25);
+}
+
+.meta-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+}
+
+.meta-code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.meta-arrow {
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.manifesto-poster-container:hover .meta-arrow {
+  transform: translate(3px, -3px);
+  color: #e61414;
+}
+
+/* ==========================================================================
+   MAIN PHRASE WITH SYSTEM GLITCH / FONT SWITCHING ANIMATION
+   ========================================================================== */
+.poster-main-phrase {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 45px 0;
+  transition: transform 0.1s ease;
+}
+
+.poster-main-phrase.is-glitching {
+  filter: drop-shadow(2px 0 0 #ff0044) drop-shadow(-2px 0 0 #00f0ff);
+  transform: translate(random(-2px, 2px), random(-1px, 1px));
+}
+
+.phrase-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 15px 24px;
+}
+
+/* Line 1: ENTRAINEMENT (Grand, lourd, condensé style Anton) */
+.word-heavy {
+  font-family: 'Anton', 'Oswald', sans-serif;
+  font-size: clamp(3.2rem, 8.5vw, 7.8rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 0.95;
+  color: #f6f6f2;
+  text-transform: uppercase;
+}
+
+/* Line 2: COMPLET (Italic Serif Glitch) ET ÉQUILIBRÉ */
+.word-glitch-serif {
+  font-size: clamp(2.8rem, 7.8vw, 6.8rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 0.95;
+  color: #e3ded5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: inline-block;
+  transition: font-family 0.05s ease, color 0.15s ease;
+  position: relative;
+}
+
+.word-connector {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.8rem, 7.5vw, 6.2rem);
+  color: #e61414;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.word-glitch-accent {
+  font-size: clamp(2.8rem, 7.8vw, 6.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transition: font-family 0.05s ease;
+}
+
+/* Line 3: LA MÉTHODE + Pill */
+.line-3 {
+  align-items: center;
+  margin-top: 10px;
+}
+
+.word-sub-serif {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-style: italic;
+  font-weight: 600;
+  color: #dedede;
+  line-height: 0.95;
+}
+
+.word-bold-red {
+  font-size: clamp(3rem, 7.5vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: #e61414;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: inline-block;
+  transition: font-family 0.05s ease;
+}
+
+.word-badge-pill {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   POSTER FOOTER STRIP
+   ========================================================================== */
+.poster-footer-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 25px;
+}
+
+.footer-feature-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #a3a3a3;
+  text-transform: uppercase;
+}
+
+.footer-feature-chip svg {
+  color: #e61414;
+}
+
+.footer-action-call {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.action-txt {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: #777;
+  font-weight: 600;
+}
+
+.action-line {
+  width: 40px;
+  height: 1px;
+  background-color: #e61414;
+}
+
+/* ==========================================================================
+   RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 900px) {
+  .manifesto-section {
+    padding: 60px 15px;
+  }
+  
+  .manifesto-poster-container {
+    padding: 30px 20px;
+  }
+
+  .word-badge-pill {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-action-call {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

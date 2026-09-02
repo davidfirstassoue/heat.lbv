@@ -1,0 +1,211 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  color: #fff;
+  height: 80px;
+  padding: 0 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  will-change: background-color;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.navbar-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #a0a0a0;
+}
+
+.more-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chevron-icon {
+  margin-top: 2px;
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar.scrolled .navbar-right {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.join-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #fff;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.join-link:hover {
+  color: #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.visit-button {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.visit-button:hover {
+  background-color: #e5e5e5;
+}
+
+@media (max-width: 1024px) {
+  .navbar-center {
+    display: none;
+  }
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 16px;
+  z-index: 100;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 80px; /* Below navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 90;
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 24px;
+}
+
+.mobile-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mobile-join {
+  margin-top: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #fff;
+  align-self: flex-start;
+  padding-bottom: 4px;
+}
+
+.mobile-visit {
+  margin-top: 20px;
+  align-self: flex-start;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  .join-link {
+    display: none;
+  }
+
+  .visit-button {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-visit {
+    display: inline-block;
+  }
+}
