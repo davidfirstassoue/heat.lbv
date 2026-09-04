@@ -43,9 +43,10 @@ export const Navbar: React.FC = () => {
         </a>
       </div>
       
-      <div className="navbar-right">
-        <a href="#join" className="join-link">JOIN TODAY</a>
-        <a href="#visit" className="visit-button">VISIT A CLUB</a>
+      <div className="navbar-right" id="nav-cta-target">
+        <a href="#tarifs" className="nav-reserve-btn">
+          RÉSERVER UNE SÉANCE
+        </a>
         <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

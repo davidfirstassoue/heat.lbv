@@ -97,11 +97,6 @@ export const HeroSection: React.FC = () => {
       {/* 2. BACKGROUND MULTI-DIRECTIONAL TEXTS (Clean & Strict Essential) */}
       <div className="hero-typography-layer" aria-hidden="true">
         
-        {/* Giant Vertical Red Background Text (Exact Reference Style) */}
-        <div className="hero-vertical-center">
-          <span className="v-giant-methode">LA MÉTHODE</span>
-          <span className="v-giant-methode">LA MÉTHODE</span>
-        </div>
 
         {/* Minimal Side Vertical Markers */}
         <div className="v-side-marker v-side-left">
@@ -117,7 +112,6 @@ export const HeroSection: React.FC = () => {
         
         {/* Top Minimal Editorial Tag */}
         <div className="hero-top-tag">
-          <span className="tag-methode-label">LA MÉTHODE</span>
           <div className="tag-line"></div>
           <ArrowRight size={20} className="tag-arrow" />
         </div>
@@ -149,17 +143,6 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: CONDENSED_DISPLAY_FONTS[fontIdx2] }}
             >
               ÉQUILIBRÉ
-            </span>
-          </div>
-
-          {/* Line 4: Red Accent Signature */}
-          <div className="phrase-row line-methode-signature">
-            <span className="sub-serif-la">LA</span>
-            <span 
-              className="sub-bold-methode"
-              style={{ fontFamily: CONDENSED_DISPLAY_FONTS[fontIdx3] }}
-            >
-              MÉTHODE
             </span>
           </div>
 
