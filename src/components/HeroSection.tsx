@@ -26,7 +26,6 @@ export const HeroSection: React.FC = () => {
   // Dynamic font states exclusively switching between condensed/geometric/display fonts
   const [fontIdx1, setFontIdx1] = useState(0);
   const [fontIdx2, setFontIdx2] = useState(1);
-  const [fontIdx3, setFontIdx3] = useState(2);
   const [isGlitching, setIsGlitching] = useState(false);
 
   // Autoplay video
@@ -50,7 +49,6 @@ export const HeroSection: React.FC = () => {
       // Rapid font swap
       setFontIdx1(Math.floor(Math.random() * CONDENSED_DISPLAY_FONTS.length));
       setFontIdx2(Math.floor(Math.random() * CONDENSED_DISPLAY_FONTS.length));
-      setFontIdx3(Math.floor(Math.random() * CONDENSED_DISPLAY_FONTS.length));
 
       // Glitch flicker
       setIsGlitching(true);
@@ -61,7 +59,6 @@ export const HeroSection: React.FC = () => {
         // Settle on clean default condensed fonts
         setFontIdx1(0); // 'Bebas Neue', Impact
         setFontIdx2(1); // 'Oswald'
-        setFontIdx3(3); // 'Anton'
         setIsGlitching(false);
       }
     }, 160);
